@@ -17,11 +17,23 @@ export function Home() {
       rel="noopener noreferrer"
     >
       Learn Solid
-    </a>
+    </a>    
+    </header>
     <div>
       <A href="/about">About</A>
     </div>
-    </header>    
+    <div>
+      <A href="/oauth/callback">oauth/callback</A>
+    </div>
+    <div>
+      <A href="/client-metadata.json">client-metadata.json</A>
+    </div>
+    <div>
+      <A href="/sign-in">Sign In</A>
+    </div>
+    <div>
+      <A href="/sign-out">Sign Out</A>
+    </div>    
   </div>
 );  
 }
