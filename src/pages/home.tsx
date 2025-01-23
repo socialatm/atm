@@ -1,11 +1,10 @@
 import logo from '../logo.svg';
 import styles from '../App.module.css';
+import { A } from '@solidjs/router';
 
 export function Home() {
-  return (
-    
-  <div class={styles.App}>
-    
+  return (    
+  <div class={styles.App}>    
     <header class={styles.header}>
     <img src={logo} class={styles.logo} alt="logo" />
     <p>
@@ -19,7 +18,10 @@ export function Home() {
     >
       Learn Solid
     </a>
-  </header>
-</div>);
-  
+    <div>
+      <A href="/about">About</A>
+    </div>
+    </header>    
+  </div>
+);  
 }

@@ -1,11 +1,14 @@
 import type { Component } from 'solid-js';
-
-import logo from './logo.svg';
-import styles from './App.module.css';
+import { Router, Route, A } from '@solidjs/router';
+import { Home } from "./pages/home";
+import { About } from "./pages/about";
 
 const App: Component = () => {
   return (
-    <></>
+    <Router>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />        
+    </Router>
   );
 };
 
