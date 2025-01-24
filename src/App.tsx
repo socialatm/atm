@@ -6,6 +6,11 @@ import { OAuthCallback } from "./routes/oauth/callback";
 import { ClientMetadata } from './routes/client-metadata.json';
 import { SignIn } from './routes/sign-in';
 import { SignOut } from './routes/sign-out';
+import { Chat } from './routes/chat';
+import { Marketplace } from './routes/marketplace';
+import { Settings } from './routes/settings';
+import { Feeds } from './routes/feeds';
+import { Lists } from './routes/lists';
 
 const App: Component = () => {
   return (
@@ -15,7 +20,12 @@ const App: Component = () => {
       <Route path="/oauth/callback" component={OAuthCallback} />
       <Route path="/client-metadata.json" component={ClientMetadata} />
       <Route path="/about" component={SignIn} />
-      <Route path="/about" component={SignOut} />        
+      <Route path="/about" component={SignOut} />
+      <Route path="/chat" component={Chat} />
+      <Route path="/marketplace" component={Marketplace} />
+      <Route path="/settings" component={Settings} />
+      <Route path="/feeds" component={Feeds} />
+      <Route path="/lists" component={Lists} />     
     </Router>
   );
 };

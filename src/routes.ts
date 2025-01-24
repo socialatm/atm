@@ -5,20 +5,11 @@ import { Agent } from "@atproto/api";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
 import { getIronSession } from "iron-session";
-import type { AppContext } from "#/index";
-import { env } from "#/lib/env";
-import { createBlankRouter } from "./routes/blank";
-import { createChatRouter } from "./routes/chat";
-import { createFeedsRouter } from "./routes/feeds";
-import { createHomeRouter } from "./routes/home";
-import { createListsRouter } from "./routes/lists";
-import { createLoginRouter } from "./routes/login";
-import { createLogoutRouter } from "./routes/logout";
-import { createMarketplaceRouter } from "./routes/marketplace";
+import type { AppContext } from "./index";
+import { env } from "./lib/env";
 import { createNotificationsRouter } from "./routes/notifications";
 import { createProfileRouter } from "./routes/profile";
 import { createSearchRouter } from "./routes/search";
-import { createSettingsRouter } from "./routes/settings";
 import { createStatusRouter } from "./routes/status";
 
 const limiter = rateLimit({
@@ -79,21 +70,12 @@ export const createRouter = (ctx: AppContext) => {
 	router.use("/axios", express.static("./node_modules/axios/dist"));
 	router.use("/vid", express.static("./node_modules/video.js/dist"));
 	router.use("/icons", express.static("./node_modules/bootstrap-icons/font"));
-	router.use("/css", express.static("./node_modules/bootswatch/dist/united"));
-
-	router.use(createBlankRouter(ctx));
-	router.use(createMarketplaceRouter(ctx));
-	router.use(createSettingsRouter(ctx));
+	router.use("/css", express.static("./node_modules/bootswatch/dist/united"));	
+	
 	router.use(createProfileRouter(ctx));
-	router.use(createListsRouter(ctx));
-	router.use(createFeedsRouter(ctx));
-	router.use(createChatRouter(ctx));
 	router.use(createNotificationsRouter(ctx));
 	router.use(createSearchRouter(ctx));
-	router.use(createStatusRouter(ctx));
-	router.use(createHomeRouter(ctx));
-	router.use(createLogoutRouter(ctx));
-	router.use(createLoginRouter(ctx));
+	router.use(createStatusRouter(ctx));	
 
 	// OAuth metadata
 	router.get(
