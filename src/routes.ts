@@ -9,8 +9,6 @@ import type { AppContext } from "./index";
 import { env } from "./lib/env";
 import { createNotificationsRouter } from "./routes/notifications";
 import { createProfileRouter } from "./routes/profile";
-import { createSearchRouter } from "./routes/search";
-import { createStatusRouter } from "./routes/status";
 
 const limiter = rateLimit({
 	windowMs: 60 * 60 * 1000,
@@ -73,9 +71,7 @@ export const createRouter = (ctx: AppContext) => {
 	router.use("/css", express.static("./node_modules/bootswatch/dist/united"));	
 	
 	router.use(createProfileRouter(ctx));
-	router.use(createNotificationsRouter(ctx));
-	router.use(createSearchRouter(ctx));
-	router.use(createStatusRouter(ctx));	
+	router.use(createNotificationsRouter(ctx));	
 
 	// OAuth metadata
 	router.get(

@@ -11,6 +11,8 @@ import { Marketplace } from './routes/marketplace';
 import { Settings } from './routes/settings';
 import { Feeds } from './routes/feeds';
 import { Lists } from './routes/lists';
+import { Search } from './routes/search';
+import { Status } from './routes/status';
 
 const App: Component = () => {
   return (
@@ -25,7 +27,9 @@ const App: Component = () => {
       <Route path="/marketplace" component={Marketplace} />
       <Route path="/settings" component={Settings} />
       <Route path="/feeds" component={Feeds} />
-      <Route path="/lists" component={Lists} />     
+      <Route path="/lists" component={Lists} />
+      <Route path="/search" component={Search} />
+      <Route path="/status" component={Status} />     
     </Router>
   );
 };
