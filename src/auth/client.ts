@@ -1,6 +1,6 @@
 import { NodeOAuthClient } from "@atproto/oauth-client-node";
 import type { MongoClient } from "mongodb";
-import { env } from "#/lib/env";
+import { env } from "../lib/env";
 import { SessionStore, StateStore } from "./storage";
 
 export const createClient = async (dbm: MongoClient) => {
