@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Router, Route, A } from '@solidjs/router';
+import { Router, Route } from '@solidjs/router';
 import { Home } from "./routes/home";
 import { About } from "./routes/about";
 import { OAuthCallback } from "./routes/oauth/callback";
