@@ -13,6 +13,8 @@ import { Feeds } from './routes/feeds';
 import { Lists } from './routes/lists';
 import { Search } from './routes/search';
 import { Status } from './routes/status';
+import { Notifications } from './routes/notifications';
+import { Profile } from './routes/profile';
 
 const App: Component = () => {
   return (
@@ -29,7 +31,9 @@ const App: Component = () => {
       <Route path="/feeds" component={Feeds} />
       <Route path="/lists" component={Lists} />
       <Route path="/search" component={Search} />
-      <Route path="/status" component={Status} />     
+      <Route path="/status" component={Status} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/notifications" component={Notifications} />     
     </Router>
   );
 };

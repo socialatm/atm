@@ -7,7 +7,7 @@ import { rateLimit } from "express-rate-limit";
 import { getIronSession } from "iron-session";
 import type { AppContext } from "./index";
 import { env } from "./lib/env";
-import { createNotificationsRouter } from "./routes/notifications";
+
 import { createProfileRouter } from "./routes/profile";
 
 const limiter = rateLimit({
@@ -68,10 +68,10 @@ export const createRouter = (ctx: AppContext) => {
 	router.use("/axios", express.static("./node_modules/axios/dist"));
 	router.use("/vid", express.static("./node_modules/video.js/dist"));
 	router.use("/icons", express.static("./node_modules/bootstrap-icons/font"));
-	router.use("/css", express.static("./node_modules/bootswatch/dist/united"));	
+	router.use("/css", express.static("./node_modules/bootswatch/dist/united"));
 	
-	router.use(createProfileRouter(ctx));
-	router.use(createNotificationsRouter(ctx));	
+	/* all these pages need ctx passed in */	
+	router.use(createProfileRouter(ctx));	
 
 	// OAuth metadata
 	router.get(
