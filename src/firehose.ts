@@ -2,7 +2,7 @@ import type { IdResolver } from "@atproto/identity";
 import { Firehose } from "@atproto/sync";
 import type { MongoClient } from "mongodb";
 import pino from "pino";
-import * as Status from "#/lexicon/types/xyz/statusphere/status";
+import * as Status from "./lexicon/types/xyz/statusphere/status";
 
 export function createFirehose(idResolver: IdResolver, dbm: MongoClient) {
 	const logger = pino({ name: "firehose ingestion" });
