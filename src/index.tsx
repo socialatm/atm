@@ -11,15 +11,15 @@ import express, { type Express } from "express";
 
 import { MongoClient } from "mongodb";
 import { pino } from "pino";
-import { createClient } from "#/auth/client";
+import { createClient } from "./auth/client";
 import {
 	type BidirectionalResolver,
 	createBidirectionalResolver,
 	createIdResolver,
-} from "#/id-resolver";
-import { createFirehose } from "#/firehose";
-import { env } from "#/lib/env";
-import { createRouter } from "#/routes";
+} from "./id-resolver";
+import { createFirehose } from "./firehose";
+import { env } from "./lib/env";
+import { createRouter } from "./routes";
 
 // Application state passed to the router and elsewhere
 export type AppContext = {
