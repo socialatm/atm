@@ -2,8 +2,8 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { Agent } from "@atproto/api";
 import type express from "express";
 import { getIronSession } from "iron-session";
-import type { AppContext } from "#/index";
-import { env } from "#/lib/env";
+import type { AppContext } from "../index";
+import { env } from "../lib/env";
 
 type Session = { did: string };
 
