@@ -22,6 +22,8 @@
     "@atproto/oauth-client-node": "^0.2.8",
     "@atproto/sync": "^0.1.11",
     "@solidjs/router": "^0.15.3",
+    "dotenv": "^16.4.7",
+    "envalid": "^8.0.0",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "iron-session": "^8.0.4",
